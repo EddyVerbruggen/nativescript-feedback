@@ -1,0 +1,16 @@
+android {
+    productFlavors {
+        "alerter" {
+            dimension "alerter"
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.tapadoo.android:alerter:1.0.6'
+}

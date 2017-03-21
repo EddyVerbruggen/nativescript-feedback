@@ -1,0 +1,55 @@
+﻿.message {
+  color: #333;
+  font-size: 18;
+  horizontal-align: center;
+  padding-top: 30;
+  padding-bottom: 20;
+}
+
+button {
+  background-color: #6494AA;
+  padding: 10 12;
+  margin: 10;
+  font-size: 14;
+  border-radius: 4;
+}
+
+Image {
+  margin: 20 0;
+}
+
+.button {
+  color: #ffffff;
+}
+
+.button-success {
+  background-color: #51ae8c;
+}
+
+.button-success-alt {
+  background-color: lightskyblue;
+}
+
+.button-info {
+  background-color: #516a78;
+}
+
+.button-warning {
+  background-color: #f18b34;
+}
+
+.button-error {
+  background-color: #ee664c;
+}
+
+.button-custom {
+  background-color: #73b7e8;
+}
+
+.button-custom-alt {
+  background-color: yellowgreen;
+}
+
+.button-hide {
+  background-color: black
+}

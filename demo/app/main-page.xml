@@ -1,0 +1,19 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ScrollView>
+    <StackLayout>
+      <Label text="NativeScript Feedback" class="message" textWrap="true"/>
+      <Image src="~/res/feedback4u.jpg" />
+      <WrapLayout horizontalAlignment="center">
+        <Button text="Success, 2.5s" tap="{{ showSuccess }}" class="button button-success" />
+        <Button text="Success, alt colors" tap="{{ showSuccessAltColors }}" class="button button-success-alt" />
+        <Button text="Info, 2s" tap="{{ showInfo }}" class="button button-info" />
+        <Button text="Warning, 4s" tap="{{ showWarning }}" class="button button-warning" />
+        <Button text="Error, 1s" tap="{{ showError }}" class="button button-error" />
+        <Button text="Error, 5s, Bottom (iOS)" tap="{{ showErrorBottom }}" class="button button-error" />
+        <Button text="No icon" tap="{{ showNoIcon }}" class="button button-custom" />
+        <Button text="Custom icon" tap="{{ showCustomIcon }}" class="button button-custom-alt" />
+        <Button text="Hide!" tap="{{ hide }}" class="button button-hide" />
+      </WrapLayout>
+    </StackLayout>
+  </ScrollView>
+</Page>
