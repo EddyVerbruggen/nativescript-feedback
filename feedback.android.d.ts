@@ -1,5 +1,5 @@
-import { FeedbackApi, FeedbackShowOptions, FeedbackHideOptions } from "./feedback.common";
-export declare class Feedback implements FeedbackApi {
+import { FeedbackCommon, FeedbackShowOptions, FeedbackHideOptions } from "./feedback.common";
+export declare class Feedback extends FeedbackCommon {
     private lastAlert;
     show(options: FeedbackShowOptions): Promise<any>;
     private static getBackgroundColor(type?);

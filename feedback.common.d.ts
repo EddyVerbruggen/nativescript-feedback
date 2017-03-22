@@ -27,4 +27,16 @@ export interface FeedbackHideOptions {
 export interface FeedbackApi {
     show(options: FeedbackShowOptions): Promise<any>;
     hide(options?: FeedbackHideOptions): Promise<any>;
+    success(options: FeedbackShowOptions): Promise<any>;
+    warning(options: FeedbackShowOptions): Promise<any>;
+    error(options: FeedbackShowOptions): Promise<any>;
+    info(options: FeedbackShowOptions): Promise<any>;
+}
+export declare abstract class FeedbackCommon implements FeedbackApi {
+    abstract show(options: FeedbackShowOptions): Promise<any>;
+    abstract hide(options?: FeedbackHideOptions): Promise<any>;
+    success(options: FeedbackShowOptions): Promise<any>;
+    warning(options: FeedbackShowOptions): Promise<any>;
+    error(options: FeedbackShowOptions): Promise<any>;
+    info(options: FeedbackShowOptions): Promise<any>;
 }

@@ -1,11 +1,11 @@
-import { FeedbackApi, FeedbackShowOptions, FeedbackHideOptions, FeedbackType } from "./feedback.common";
+import { FeedbackCommon, FeedbackShowOptions, FeedbackHideOptions, FeedbackType } from "./feedback.common";
 import * as application from "application";
 import * as utils from "utils/utils";
 import { Color } from "color";
 
 declare let com: any;
 
-export class Feedback implements FeedbackApi {
+export class Feedback extends FeedbackCommon {
 
   private lastAlert: any = null;
 

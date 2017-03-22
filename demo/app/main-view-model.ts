@@ -1,5 +1,5 @@
 import { Observable } from "data/observable";
-import { Feedback, FeedbackShowOptions, FeedbackType, FeedbackPosition } from "nativescript-feedback";
+import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
 import { Color } from "color";
 
 export class HelloWorldModel extends Observable {
@@ -12,18 +12,18 @@ export class HelloWorldModel extends Observable {
   }
 
   public showSuccess(): void {
-    this.feedback.show({
+    this.feedback.success({
       title: "Successfully shown myself!",
       message: "I'm configured to hide after 2.5 seconds.",
       duration: 2500,
-      type: FeedbackType.Success,
+      // type: FeedbackType.Success, // no need to specify when using 'success' instead of 'show'
       onTap: () => { console.log("showSuccess tapped") }
     });
   }
 
   public showSuccessAltColors(): void {
     this.feedback.show({
-      title: "Custom colors!",
+      title: "Custom colors :)",
       titleColor: new Color("black"),
       message: "Custom text colors and background color.",
       messageColor: new Color("#516a78"),

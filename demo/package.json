@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.demo",
+    "id": "org.nativescript.plugindemo.feedback",
     "tns-ios": {
       "version": "2.5.0"
     },
@@ -9,7 +9,7 @@
     }
   },
   "dependencies": {
-    "nativescript-feedback": "file:///Users/eddyverbruggen/sandboxes/nativescript-feedback",
+    "nativescript-feedback": "file:..",
     "nativescript-theme-core": "^1.0.2",
     "nativescript-unit-test-runner": "^0.3.4",
     "tns-core-modules": "^2.5.1"

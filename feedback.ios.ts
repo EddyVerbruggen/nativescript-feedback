@@ -1,6 +1,12 @@
-import { FeedbackApi, FeedbackShowOptions, FeedbackHideOptions, FeedbackPosition, FeedbackType } from "./feedback.common";
+import {
+  FeedbackCommon,
+  FeedbackShowOptions,
+  FeedbackHideOptions,
+  FeedbackPosition,
+  FeedbackType
+} from "./feedback.common";
 
-export class Feedback implements FeedbackApi {
+export class Feedback extends FeedbackCommon {
 
   show(options: FeedbackShowOptions): Promise<any> {
     return new Promise((resolve, reject) => {
