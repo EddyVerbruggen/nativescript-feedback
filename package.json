@@ -19,17 +19,23 @@
     "test.ios.device": "cd demo && tns test ios",
     "test.android": "cd demo && tns test android",
     "preparedemo": "npm run build && cd demo && tns plugin remove nativescript-feedback && tns plugin add .. && tns install",
-    "setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd ..",
+    "setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd .."
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/EddyVerbruggen/nativescript-feedback.git"
   },
   "keywords": [
+    "ecosystem:nativescript",
     "NativeScript",
     "JavaScript",
     "Android",
-    "iOS"
+    "iOS",
+    "Feedback",
+    "Notification",
+    "Message",
+    "Toast",
+    "Snackbar"
   ],
   "author": {
     "name": "Eddy Verbruggen",

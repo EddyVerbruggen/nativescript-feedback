@@ -2,6 +2,7 @@
 .vscode
 demo/
 screenshots/
+media/
 *.gif
 *.log
 *.map
