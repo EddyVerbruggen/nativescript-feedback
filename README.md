@@ -5,7 +5,7 @@ NativeScript Feedback
 <img src="https://github.com/EddyVerbruggen/nativescript-feedback/raw/master/media/demo-android.gif" height="691px"/>
 
 
-_Videos of iOS and Android running the [included demo app](demo/index.html)._
+_iOS and Android running the [included demo app](demo/index.html). The framerate doesn't do the animations justice, [this YouTube video does](https://www.youtube.com/watch?v=A3jX5g9msm0)._
 
 ## Installation
 ```bash
