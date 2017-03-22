@@ -5,7 +5,7 @@ NativeScript Feedback
 <img src="https://github.com/EddyVerbruggen/nativescript-feedback/raw/master/media/demo-android.gif" height="691px"/>
 
 
-_iOS and Android running the [included demo](demo/index.html) - [much better framerate on YouTube](https://www.youtube.com/watch?v=A3jX5g9msm0)!_
+_iOS and Android running the included demo - [much better framerate on YouTube](https://www.youtube.com/watch?v=A3jX5g9msm0)!_
 
 ## Installation
 ```bash
@@ -63,7 +63,7 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/a4c500b5a4d4d0888539577257b84d9d29520cd4/demo/app/main-view-model.ts#L75). Want no icon at all? Don't set a `type`. |
 | `onTap`| `undefined` | A callback function that gets invoked when the user tapped your feedback. |
 
-One of the examples in the demo app shows a custom icon and alternative colors. You'd get there by doing:
+One of the examples in [the demo app](demo/index.html) shows a custom icon and alternative colors. You'd get there by doing:
 
 ```js
 this.feedback.show({
@@ -81,6 +81,9 @@ this.feedback.show({
 ### hide
 Hiding a message can be done automatically (see `duration`), by a gesture (tap / swipe), or programmatically as shown here:
 
+```js
+this.feedback.hide();
+```
 
 ### Convenience functions
 Since in many cases you want to only show success / info / warning / error messages anyway, this plugin's got you covered. You can call any of these functions and still pass in any of the aforementioned properties to tweak it to your liking:

@@ -3,7 +3,6 @@ import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback"
 import { Color } from "color";
 
 export class HelloWorldModel extends Observable {
-  public message: string;
   private feedback: Feedback;
 
   constructor() {
