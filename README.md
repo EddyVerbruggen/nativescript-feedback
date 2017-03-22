@@ -1,8 +1,8 @@
 NativeScript Feedback
 =====================
 
-<img src="https://github.com/EddyVerbruggen/nativescript-feedback/raw/master/media/demo-ios.gif" width="377px" height="691px"/>&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/EddyVerbruggen/nativescript-feedback/raw/master/media/demo-android.gif" width="346px" height="702px"/>
+<img src="https://github.com/EddyVerbruggen/nativescript-feedback/raw/master/media/demo-ios.gif" width="377px" height="691px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/EddyVerbruggen/nativescript-feedback/raw/master/media/demo-android.gif" height="691px"/>
 
 
 _Videos of iOS and Android running the [included demo app](demo/index.html)._
@@ -37,13 +37,13 @@ export Class MyClassWithFeedback {
 }
 ```
 
-### `show`
+### show
 
 Showing feedback can be as easy as:
 
 ```js
 this.feedback.show({
-  message: "Easiest thing ever, right?
+  message: "Easiest thing ever, right?"
 });
 ```
 
@@ -78,7 +78,7 @@ this.feedback.show({
 });
 ```
 
-### `hide`
+### hide
 Hiding a message can be done automatically (see `duration`), by a gesture (tap / swipe), or programmatically as shown here:
 
 
