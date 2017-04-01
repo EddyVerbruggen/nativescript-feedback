@@ -8,3 +8,4 @@ media/
 *.map
 *.ts
 !*.d.ts
+tslint.json

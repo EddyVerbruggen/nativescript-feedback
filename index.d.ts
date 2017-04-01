@@ -1,3 +1,3 @@
-export * from './feedback.ios';
+export * from "./feedback.ios";
 
-export * from './feedback.common';
+export * from "./feedback.common";
