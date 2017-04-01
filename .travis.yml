@@ -19,7 +19,7 @@ before_install:
   - wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
   - source ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION
   - PATH="`npm bin`:`npm bin -g`:$PATH"
-   - brew update > /dev/null;
+  - brew update > /dev/null;
   - brew install android-sdk dash gnu-sed jpeg python3;
   - echo y | android update sdk --filter tools,platform-tools,android-25,build-tools-25.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui;
   - npm install -g npm
