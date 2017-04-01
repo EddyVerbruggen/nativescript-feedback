@@ -1,5 +1,7 @@
 .idea
 .vscode
+.travis.yml
+tslint.json
 demo/
 screenshots/
 media/
@@ -8,4 +10,3 @@ media/
 *.map
 *.ts
 !*.d.ts
-tslint.json
