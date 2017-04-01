@@ -4,6 +4,7 @@ sudo: false
 language: objective-c
 
 env:
+  - NODE_VERSION="4"
   - NODE_VERSION="5"
   - NODE_VERSION="6"
 
@@ -11,9 +12,13 @@ licenses:
   - 'android-sdk-preview-license-52d11cd2'
   - 'android-sdk-license-.+'
 
+script:
+  - export ANDROID_HOME=/usr/local/opt/android-sdk
+  - export PATH=$PATH:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
+  - npm run build
+  - npm run test
 
 before_install:
-  - brew update > /dev/null
   - export ANDROID_HOME=/usr/local/opt/android-sdk
   - export PATH=$PATH:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
   - wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
@@ -31,7 +36,7 @@ before_install:
   - pod --version
   - pod setup --silent
   - pod repo update --silent
-  # Show environment info
+  # Show environment invo
   - node --version
   - npm --version
   - xcpretty --version
@@ -39,15 +44,3 @@ before_install:
   - xcodebuild -showsdks
   - echo $ANDROID_HOME
   - npm run clean
-
-install:
-    - tns usage-reporting disable
-    - tns error-reporting disable
-    - npm install
-
-script:
-  - export ANDROID_HOME=/usr/local/opt/android-sdk
-  - export PATH=$PATH:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
-  - npm run build
-  - npm run test
- # - npm run e2e
