@@ -15,7 +15,7 @@
     "demo.ios": "npm run preparedemo && cd demo && tns run ios --emulator",
     "demo.ios.device": "npm run preparedemo && cd demo && tns run ios",
     "demo.android": "npm run preparedemo && cd demo && tns run android --emulator",
-    "test": "cd demo && tns test ios --emulator",
+    "test": "npm run tslint && cd demo && tns test ios --emulator",
     "test.ios": "cd demo && tns test ios --emulator",
     "test.ios.device": "cd demo && tns test ios",
     "test.android": "cd demo && tns test android",
