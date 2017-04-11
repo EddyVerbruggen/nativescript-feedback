@@ -51,8 +51,7 @@
             "check-decl",
             "check-operator",
             "check-separator",
-            "check-type",
-            "check-module"
+            "check-type"
         ]
     }
 }
