@@ -25,13 +25,11 @@ tns plugin add nativescript-feedback
 ## API
 
 ### requiring / importing the plugin
-All examples below assume you're using TypeScript, but here's how to require the plugin with plain old JS as well:
 
 #### JavaScript
 ```js
 var FeedbackPlugin = require("nativescript-feedback");
 var feedback = new FeedbackPlugin.Feedback();
-
 ```
 
 #### TypeScript
@@ -75,10 +73,35 @@ However, there are a lot of things you may want to tweak. All of which are optio
 
 One of the examples in [the demo app](demo/index.html) shows a custom icon and alternative colors. You'd get there by doing:
 
+#### JavaScript
 ```js
+var FeedbackType = require ("nativescript-feedback").FeedbackType;
+var FeedbackPosition = require ("nativescript-feedback").FeedbackPosition;
+var color = require("color");
+
+this.feedback.show({
+  title: "Thumbs up!",
+  titleColor: new color.Color("#222222"),
+  position: FeedbackPosition.Bottom, // iOS only
+  type: FeedbackType.Custom, // this is the default type, by the way
+  message: "Custom colors and icon. Loaded from the App_Resources folder.",
+  messageColor: new color.Color("#333333"),
+  duration: 3000,
+  backgroundColor: new color.Color("yellowgreen"),
+  icon: "customicon", // in App_Resources/platform folders
+  onTap: function() { console.log("showCustomIcon tapped") }
+});
+```
+
+#### TypeScript
+```js
+import { FeedbackType, FeedbackPosition } from "nativescript-feedback";
+
 this.feedback.show({
   title: "Thumbs up!",
   titleColor: new Color("#222222"),
+  position: FeedbackPosition.Bottom, // iOS only
+  type: FeedbackType.Custom, // this is the default type, by the way
   message: "Custom colors and icon. Loaded from the App_Resources folder.",
   messageColor: new Color("#333333"),
   duration: 3000,

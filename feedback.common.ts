@@ -1,16 +1,16 @@
 import { Color } from "color";
 
-export declare const enum FeedbackPosition {
-  Top = 1,
-  Bottom = 2
+export enum FeedbackPosition {
+  Top,
+  Bottom
 }
 
-export declare const enum FeedbackType {
-  Success = 1,
-  Error = 2,
-  Warning = 3,
-  Info = 4,
-  Custom = 5
+export enum FeedbackType {
+  Success,
+  Error,
+  Warning,
+  Info,
+  Custom
 }
 
 export interface FeedbackShowOptions {
@@ -44,7 +44,7 @@ export interface FeedbackShowOptions {
    * You can still override all other properties according to your liking.
    * Default FeedbackType.Custom.
    */
-      type?: FeedbackType;
+  type?: FeedbackType;
   /**
    * Either FeedbackPosition.Top or FeedbackPosition.Bottom (iOS only).
    * Default FeedbackPosition.Top

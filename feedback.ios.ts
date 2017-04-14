@@ -6,6 +6,10 @@ import {
   FeedbackType
 } from "./feedback.common";
 
+// Export the enums for devs not using TS
+exports.FeedbackPosition = FeedbackPosition;
+exports.FeedbackType = FeedbackType;
+
 export class Feedback extends FeedbackCommon {
 
   show(options: FeedbackShowOptions): Promise<any> {

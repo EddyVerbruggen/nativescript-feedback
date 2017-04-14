@@ -1,6 +1,6 @@
 {
   "name": "nativescript-feedback",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Non-blocking textual feedback for your NativeScript app. AKA superfancy Toasts!",
   "main": "feedback",
   "typings": "index.d.ts",
@@ -23,7 +23,7 @@
     "setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd ..",
     "tslint": "tslint *.ts",
     "tslint.demo": "tslint demo/app/*.ts",
-    "prepublish": "tsc"
+    "prepublish": "npm run build && npm run tslint"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,13 @@
-import { FeedbackCommon, FeedbackShowOptions, FeedbackHideOptions, FeedbackType } from "./feedback.common";
+import { FeedbackCommon, FeedbackShowOptions, FeedbackHideOptions, FeedbackType, FeedbackPosition } from "./feedback.common";
 import * as application from "application";
 import * as utils from "utils/utils";
 import { Color } from "color";
 
 declare let com: any;
+
+// Export the enums for devs not using TS
+exports.FeedbackPosition = FeedbackPosition;
+exports.FeedbackType = FeedbackType;
 
 export class Feedback extends FeedbackCommon {
 
