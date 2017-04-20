@@ -3,11 +3,11 @@
 *.js
 *.js.map
 *.log
+*.d.ts
 !scripts/*.js
 demo/app/*.js
 !demo/karma.conf.js
 !demo/app/tests/*.js
-*.d.ts
 !demo/references.d.ts
 !index.d.ts
 !references.d.ts
