@@ -1,46 +1,39 @@
-os: osx
-osx_image: xcode8
-sudo: false
-language: objective-c
+language: android
 
-env:
-  - NODE_VERSION="4"
-  - NODE_VERSION="5"
-  - NODE_VERSION="6"
+jdk: oraclejdk8
 
-licenses:
-  - 'android-sdk-preview-license-52d11cd2'
-  - 'android-sdk-license-.+'
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-25.0.2
+    - android-25
+    - extra-android-m2repository
+    - sys-img-armeabi-v7a-android-21
+
+before_cache:
+    - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+cache:
+    directories:
+        - .nvm
+        - $HOME/.gradle/caches/
+        - $HOME/.gradle/wrapper/
+
+install:
+    - nvm install node
+    - npm install -g nativescript
+    - tns usage-reporting disable
+    - tns error-reporting disable
+    - npm install
+
+before_script:
+    - echo no | android create avd --force -n test -t android-21 -b armeabi-v7a
+    - emulator -avd test -no-audio -no-window &
+    - android-wait-for-emulator
 
 script:
-  - export ANDROID_HOME=/usr/local/opt/android-sdk
-  - export PATH=$PATH:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
-  - npm run build
-  - npm run test
-
-before_install:
-  - export ANDROID_HOME=/usr/local/opt/android-sdk
-  - export PATH=$PATH:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
-  - wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-  - source ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION
-  - PATH="`npm bin`:`npm bin -g`:$PATH"
-  - brew update > /dev/null;
-  - brew install android-sdk dash gnu-sed jpeg python3;
-  - echo y | android update sdk --filter tools,platform-tools,android-25,build-tools-25.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui;
-  - npm install -g npm
-  - npm install -g nativescript
-  - npm install
-  # CocoaPods
-  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
-  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-  - pod --version
-  - pod setup --silent
-  - pod repo update --silent
-  # Show environment invo
-  - node --version
-  - npm --version
-  - xcpretty --version
-  - xcodebuild -version
-  - xcodebuild -showsdks
-  - echo $ANDROID_HOME
-  - npm run clean
+    - cd src
+    - npm run setup
+    - npm run demo.android
+    - npm run test.android

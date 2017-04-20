@@ -1,9 +1,12 @@
 # NativeScript Feedback
 
+[![Build Status][build-status]][build-url]
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 [![Twitter Follow][twitter-image]][twitter-url]
 
+[build-status]:https://travis-ci.org/EddyVerbruggen/nativescript-feedback.svg?branch=master
+[build-url]:https://travis-ci.org/EddyVerbruggen/nativescript-feedback
 [npm-image]:http://img.shields.io/npm/v/nativescript-feedback.svg
 [npm-url]:https://npmjs.org/package/nativescript-feedback
 [downloads-image]:http://img.shields.io/npm/dm/nativescript-feedback.svg
