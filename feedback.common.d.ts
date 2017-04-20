@@ -1,14 +1,14 @@
 import { Color } from "color";
-export declare const enum FeedbackPosition {
-    Top = 1,
-    Bottom = 2,
+export declare enum FeedbackPosition {
+    Top = 0,
+    Bottom = 1,
 }
-export declare const enum FeedbackType {
-    Success = 1,
-    Error = 2,
-    Warning = 3,
-    Info = 4,
-    Custom = 5,
+export declare enum FeedbackType {
+    Success = 0,
+    Error = 1,
+    Warning = 2,
+    Info = 3,
+    Custom = 4,
 }
 export interface FeedbackShowOptions {
     title?: string;
