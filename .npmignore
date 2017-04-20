@@ -11,3 +11,5 @@ media/
 *.ts
 !*.d.ts
 tsconfig.json
+references.d.ts
+platforms/ios/ISMessages.d.ts
