@@ -34,5 +34,4 @@ before_script:
 
 script:
     - npm run setup
-    - npm run demo.android
-    - npm run test.android
+    - npm test
