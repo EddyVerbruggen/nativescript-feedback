@@ -71,7 +71,7 @@ export class Feedback extends FeedbackCommon {
   }
 
   private static getBackgroundColor(type?: FeedbackType): Color {
-    if (!type || type as FeedbackType === FeedbackType.Custom) {
+    if (type === undefined || type === null || type as FeedbackType === FeedbackType.Custom) {
       return new Color("#73b7e8");
     } else if (type as FeedbackType === FeedbackType.Warning) {
       return new Color("#f18b34");
@@ -90,7 +90,7 @@ export class Feedback extends FeedbackCommon {
   }
 
   private static getIconName(type?: FeedbackType): string {
-    if (!type || type as FeedbackType === FeedbackType.Custom) {
+    if (type === undefined || type === null || type as FeedbackType === FeedbackType.Custom) {
       return null;
     } else if (type as FeedbackType === FeedbackType.Warning) {
       return "warningicon";

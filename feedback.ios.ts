@@ -6,6 +6,8 @@ import {
   FeedbackType
 } from "./feedback.common";
 
+declare const ISAlertTypeSuccess: any;
+
 // Export the enums for devs not using TS
 exports.FeedbackPosition = FeedbackPosition;
 exports.FeedbackType = FeedbackType;
@@ -62,7 +64,7 @@ export class Feedback extends FeedbackCommon {
   }
 
   private static getType(type?: FeedbackType) {
-    if (!type || type as FeedbackType === FeedbackType.Custom) {
+    if (type === undefined || type === null || type as FeedbackType === FeedbackType.Custom) {
       return ISAlertType.Custom;
     } else if (type as FeedbackType === FeedbackType.Warning) {
       return ISAlertType.Warning;
