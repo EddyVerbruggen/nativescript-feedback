@@ -154,3 +154,7 @@ this.feedback.error({
   titleColor: new Color("black")
 });
 ```
+
+## Credits
+On Android we're using the [Alerter library by Tapadoo](https://github.com/Tapadoo/Alerter),
+and on iOS [ISMessages by ilyainyushin](https://github.com/ilyainyushin/ISMessages).
