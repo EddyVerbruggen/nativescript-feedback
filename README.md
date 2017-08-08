@@ -71,7 +71,7 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | `type` | `FeedbackType.Custom` | One of `.Custom`, `.Success`, `.Warning`, `.Error`, `.Info`. Each with a distinct style as show in the animations above. You can still override all other properties according to your liking. |
 | `position` | `FeedbackPosition.Top` | Either `.Top` or `.Bottom` *(iOS only)*. |
 | `backgroundColor` | Depends on the `type` | The background's color. |
-| `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/a4c500b5a4d4d0888539577257b84d9d29520cd4/demo/app/main-view-model.ts#L75). Want no icon at all? Don't set a `type`. |
+| `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/master/demo/app/main-view-model.ts#L74). Want no icon at all? Don't set a `type`. |
 | `onTap`| `undefined` | A callback function that gets invoked when the user tapped your feedback. |
 
 One of the examples in [the demo app](demo/index.html) shows a custom icon and alternative colors. You'd get there by doing:
