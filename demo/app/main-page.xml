@@ -12,6 +12,9 @@
         <Button text="Error, 5s, Bottom (iOS)" tap="{{ showErrorBottom }}" class="button button-error" />
         <Button text="No icon" tap="{{ showNoIcon }}" class="button button-custom" />
         <Button text="Custom icon" tap="{{ showCustomIcon }}" class="button button-custom-alt" />
+        <iOS>
+          <Button text="Custom another icon" tap="{{ showAnotherCustomIcon }}" class="button button-custom-alt" />
+        </iOS>
         <Button text="Hide!" tap="{{ hide }}" class="button button-hide" />
       </WrapLayout>
     </StackLayout>

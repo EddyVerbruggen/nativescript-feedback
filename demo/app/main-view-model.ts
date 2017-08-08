@@ -76,6 +76,19 @@ export class HelloWorldModel extends Observable {
     });
   }
 
+  public showAnotherCustomIcon(): void {
+    this.feedback.show({
+      title: "Dude!",
+      titleColor: new Color("#222222"),
+      message: "Custom colors and icon - loaded from the App_Resources folder.",
+      messageColor: new Color("#333333"),
+      duration: 3000,
+      backgroundColor: new Color("yellowgreen"),
+      icon: "issue7icon", // in App_Resources/platform folders
+      onTap: () => { console.log("showAnotherCustomIcon tapped"); }
+    });
+  }
+
   public showError(): void {
     this.feedback.show({
       title: "The error title",

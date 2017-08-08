@@ -1,18 +1,18 @@
 {
   "nativescript": {
     "id": "org.nativescript.plugindemo.feedback",
-    "tns-ios": {
-      "version": "2.5.0"
-    },
     "tns-android": {
-      "version": "2.5.0"
+      "version": "3.1.1"
+    },
+    "tns-ios": {
+      "version": "3.1.0"
     }
   },
   "dependencies": {
-    "nativescript-feedback": "file:..",
+    "nativescript-feedback": "../",
     "nativescript-theme-core": "^1.0.2",
     "nativescript-unit-test-runner": "^0.3.4",
-    "tns-core-modules": "^2.5.1"
+    "tns-core-modules": "^3.1.0"
   },
   "devDependencies": {
     "babel-traverse": "6.12.0",
@@ -25,6 +25,6 @@
     "karma-nativescript-launcher": "^0.4.0",
     "lazy": "1.0.11",
     "nativescript-dev-typescript": "^0.3.7",
-    "typescript": "^2.1.0"
+    "typescript": "~2.3.0"
   }
 }
