@@ -11,6 +11,7 @@ demo/app/*.js
 !demo/references.d.ts
 !index.d.ts
 !references.d.ts
+!platforms/ios/*.d.ts
 demo/lib
 demo/platforms
 demo/node_modules

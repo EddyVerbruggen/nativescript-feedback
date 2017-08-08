@@ -1,4 +1,4 @@
-import { Color } from "color";
+import { Color } from "tns-core-modules/color";
 
 export enum FeedbackPosition {
   Top,
@@ -67,6 +67,15 @@ export interface FeedbackShowOptions {
    * Default undefined.
    */
   onTap?: Function;
+  /**
+   * Android-specific options
+   */
+  android?: {
+    /**
+     * The icon's color. Android only as iOS uses the icon's color, but Android is otherwise always white.
+     */
+    iconColor?: Color;
+  };
 }
 
 export interface FeedbackHideOptions {

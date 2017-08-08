@@ -72,6 +72,7 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | `position` | `FeedbackPosition.Top` | Either `.Top` or `.Bottom` *(iOS only)*. |
 | `backgroundColor` | Depends on the `type` | The background's color. |
 | `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/master/demo/app/main-view-model.ts#L74). Want no icon at all? Don't set a `type`. |
+| `iconColor` | See description | On iOS the icon color is as-is, but on Android it's white. Set this color to override both. |
 | `onTap`| `undefined` | A callback function that gets invoked when the user tapped your feedback. |
 
 One of the examples in [the demo app](demo/index.html) shows a custom icon and alternative colors. You'd get there by doing:
@@ -110,6 +111,7 @@ this.feedback.show({
   duration: 3000,
   backgroundColor: new Color("yellowgreen"),
   icon: "customicon", // in App_Resources/platform folders
+  iconColor: new Color("#222222"), // optional, leave out if you don't need it
   onTap: () => { console.log("showCustomIcon tapped") }
 });
 ```

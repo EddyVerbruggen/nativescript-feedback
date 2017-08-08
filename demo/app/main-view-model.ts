@@ -1,6 +1,6 @@
-import { Observable } from "data/observable";
+import { Observable } from "tns-core-modules/data/observable";
+import { Color } from "tns-core-modules/color";
 import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
-import { Color } from "color";
 
 export class HelloWorldModel extends Observable {
   private feedback: Feedback;
@@ -76,7 +76,7 @@ export class HelloWorldModel extends Observable {
     });
   }
 
-  public showAnotherCustomIcon(): void {
+  public showBlackCustomIcon(): void {
     this.feedback.show({
       title: "Dude!",
       titleColor: new Color("#222222"),
@@ -85,6 +85,9 @@ export class HelloWorldModel extends Observable {
       duration: 3000,
       backgroundColor: new Color("yellowgreen"),
       icon: "issue7icon", // in App_Resources/platform folders
+      android: {
+        iconColor: new Color("black"),
+      },
       onTap: () => { console.log("showAnotherCustomIcon tapped"); }
     });
   }

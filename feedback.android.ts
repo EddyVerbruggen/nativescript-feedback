@@ -1,7 +1,7 @@
 import { FeedbackCommon, FeedbackShowOptions, FeedbackHideOptions, FeedbackType, FeedbackPosition } from "./feedback.common";
-import * as application from "application";
-import * as utils from "utils/utils";
-import { Color } from "color";
+import * as application from "tns-core-modules/application";
+import * as utils from "tns-core-modules/utils/utils";
+import { Color } from "tns-core-modules/color";
 
 declare let com: any;
 
@@ -64,6 +64,11 @@ export class Feedback extends FeedbackCommon {
       if (options.messageColor) {
         let messageView = this.lastAlert.getText(); // android.widget.TextView
         messageView.setTextColor(options.messageColor.android);
+      }
+
+      if (options.android && options.android.iconColor) {
+        let iconView = this.lastAlert.getIcon(); // android.widget.ImageView
+        iconView.setColorFilter(options.android.iconColor.android);
       }
 
       resolve();
