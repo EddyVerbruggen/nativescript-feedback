@@ -33,5 +33,4 @@ before_script:
     - android-wait-for-emulator
 
 script:
-    - npm run setup
-    - npm test
+    - npm run test
