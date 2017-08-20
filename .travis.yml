@@ -25,10 +25,9 @@ install:
     - npm install -g nativescript
     - tns usage-reporting disable
     - tns error-reporting disable
-    - npm install
 
 before_script:
-    - echo no | android create avd --force -n test -t android-21 -b armeabi-v7a
+    - echo no | android create avd --force -n test -t android-25 -b armeabi-v7a
     - emulator -avd test -no-audio -no-window &
     - android-wait-for-emulator
 

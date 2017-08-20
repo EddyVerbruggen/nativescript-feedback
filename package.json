@@ -19,7 +19,7 @@
     "test.android": "cd demo && tns test android",
     "preparedemo": "npm run build && cd demo && tns plugin remove nativescript-feedback && tns plugin add .. && tns install",
     "setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd ..",
-    "tslint": "tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\" --exclude \"**/platforms/**\""
+    "tslint": "tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\" --exclude \"platforms/**\"  --exclude \"demo/platforms/**\""
   },
   "repository": {
     "type": "git",
