@@ -9,7 +9,7 @@
     }
   },
   "dependencies": {
-    "nativescript-feedback": "../",
+    "nativescript-feedback": "^1.0.6",
     "nativescript-theme-core": "^1.0.4",
     "nativescript-unit-test-runner": "^0.3.4",
     "tns-core-modules": "^3.1.0"
