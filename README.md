@@ -20,6 +20,9 @@
 
 _iOS and Android running the included demo - [much better framerate on YouTube](https://www.youtube.com/watch?v=A3jX5g9msm0)!_
 
+## Demo app (Angular)
+This plugin is part of the [plugin showcase app](https://github.com/EddyVerbruggen/nativescript-pluginshowcase/tree/master/app/feedback) I built using Angular.
+
 ## Installation
 ```bash
 tns plugin add nativescript-feedback
