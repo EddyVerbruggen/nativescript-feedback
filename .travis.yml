@@ -13,14 +13,14 @@ matrix:
       language: node_js
       node_js: "6"
       jdk: oraclejdk8
-      script: cd demo && npm run build.plugin && npm i && npm run build-ios-bundle
+      script: cd demo && npm run build.plugin && npm i && tns build ios --bundle
     - language: android
       os: linux
       env:
         - Platform="Android"
       jdk: oraclejdk8
       before_install: nvm install 6.10.3
-      script: cd demo && npm run build.plugin && npm i && npm run build-android-bundle
+      script: cd demo && npm run build.plugin && npm i && tns build android --bundle
     - stage: "Build"
       env:
         - BuildAndroid="25"
@@ -43,8 +43,8 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-25.0.2
-    - android-25
+    - build-tools-26.0.1
+    - android-26
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-21
 
