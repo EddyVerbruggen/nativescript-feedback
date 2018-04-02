@@ -12,5 +12,10 @@ repositories {
 }
 
 dependencies {
+    def supportVer = "27.0.1"
+    if (project.hasProperty("supportVersion")) {
+        supportVer = supportVersion
+    }
+    compile "com.android.support:appcompat-v7:$supportVer"
     compile 'com.tapadoo.android:alerter:1.0.6'
 }
