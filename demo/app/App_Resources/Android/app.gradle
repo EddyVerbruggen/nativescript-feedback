@@ -5,12 +5,12 @@
 //	compile 'com.android.support:recyclerview-v7:+'
 //}
 
-android {  
-  defaultConfig {  
+android {
+  defaultConfig {
     generatedDensities = []
-    applicationId = "org.nativescript.starter"  
-  }  
-  aaptOptions {  
-    additionalParameters "--no-version-vectors"  
-  }  
-} 
+    applicationId = "org.nativescript.plugindemo.feedback"
+  }
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+}
