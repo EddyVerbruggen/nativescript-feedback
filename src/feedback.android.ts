@@ -66,6 +66,12 @@ export class Feedback extends FeedbackCommon {
         messageView.setTextColor(options.messageColor.android);
       }
 
+      if (options.font) {
+        const typeface = android.graphics.Typeface.createFromAsset(Feedback.getAssets(), `${options.font}.ttf`);
+        this.lastAlert.setTitleTypeface(typeface);
+        this.lastAlert.setTextTypeface(typeface);
+      }
+
       if (options.android && options.android.iconColor) {
         let iconView = this.lastAlert.getIcon(); // android.widget.ImageView
         iconView.setColorFilter(options.android.iconColor.android);
@@ -92,6 +98,11 @@ export class Feedback extends FeedbackCommon {
   private static getIconResourceId(resourcename: string): number {
     let res = utils.ad.getApplicationContext().getResources();
     return res.getIdentifier(resourcename, "drawable", utils.ad.getApplication().getPackageName());
+  }
+
+  private static getAssets() {
+    let res = utils.ad.getApplicationContext().getResources();
+    return res.getAssets();
   }
 
   private static getIconName(type?: FeedbackType): string {

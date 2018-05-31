@@ -68,6 +68,11 @@ export interface FeedbackShowOptions {
    */
   onTap?: Function;
   /**
+  * The font name.
+  *  * Default to system font.
+  */
+  font?: string;
+  /**
    * Android-specific options
    */
   android?: {
