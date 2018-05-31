@@ -71,8 +71,8 @@ export class Feedback extends FeedbackCommon {
           const fontPath = `app/fonts/${options.font.replace(/\s+/g, '')}.ttf`;
           const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
 
-          this.lastAlert.setTitleTypeface(typeface);
-          this.lastAlert.setTextTypeface(typeface);
+          this.lastAlert.getTitle().setTypeface(typeface);
+          this.lastAlert.getText().setTypeface(typeface);
       }
 
       if (options.android && options.android.iconColor) {
