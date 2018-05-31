@@ -115,11 +115,11 @@ export class HelloWorldModel extends Observable {
 
   public showCustomFont(): void {
     this.feedback.success({
-        title: "With Custom font",
+        title: "With custom font",
         message: "I'm configured to show with custom font.",
         duration: 2500,
         font: 'Indie Flower',
-        onTap: () => { console.log("showSuccess tapped"); }
+        onTap: () => { console.log("customFont tapped"); }
       });
     }
 

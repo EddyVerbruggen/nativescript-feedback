@@ -67,10 +67,12 @@ export class Feedback extends FeedbackCommon {
       }
 
       if (options.font) {
-        const typeface = android.graphics.Typeface
-            .createFromAsset(Feedback.getAssets(), `${options.font.replace(/\s/g, "")}.ttf`);
-        this.lastAlert.setTitleTypeface(typeface);
-        this.lastAlert.setTextTypeface(typeface);
+          const assetManger = utils.ad.getApplicationContext().getAssets();
+          const fontPath = `app/fonts/${options.font.replace(/\s+/g, '')}.ttf`;
+          const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
+
+          this.lastAlert.setTitleTypeface(typeface);
+          this.lastAlert.setTextTypeface(typeface);
       }
 
       if (options.android && options.android.iconColor) {
@@ -99,11 +101,6 @@ export class Feedback extends FeedbackCommon {
   private static getIconResourceId(resourcename: string): number {
     let res = utils.ad.getApplicationContext().getResources();
     return res.getIdentifier(resourcename, "drawable", utils.ad.getApplication().getPackageName());
-  }
-
-  private static getAssets() {
-    let res = utils.ad.getApplicationContext().getResources();
-    return res.getAssets();
   }
 
   private static getIconName(type?: FeedbackType): string {
