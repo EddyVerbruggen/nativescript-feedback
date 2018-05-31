@@ -67,7 +67,8 @@ export class Feedback extends FeedbackCommon {
       }
 
       if (options.font) {
-        const typeface = android.graphics.Typeface.createFromAsset(Feedback.getAssets(), `${options.font}.ttf`);
+        const typeface = android.graphics.Typeface
+            .createFromAsset(Feedback.getAssets(), `${options.font.replace(/\s/g, "")}.ttf`);
         this.lastAlert.setTitleTypeface(typeface);
         this.lastAlert.setTextTypeface(typeface);
       }
