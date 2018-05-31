@@ -13,11 +13,11 @@ exports.FeedbackPosition = FeedbackPosition;
 exports.FeedbackType = FeedbackType;
 
 export class Feedback extends FeedbackCommon {
-  show(options: FeedbackShowOptions): Promise<any> {
+  show(options: FeedbackShowOptions): Promise < any > {
     return new Promise((resolve, reject) => {
-      let icon: UIImage = options.icon
-        ? UIImage.imageNamed(options.icon)
-        : null;
+      let icon: UIImage = options.icon ?
+        UIImage.imageNamed(options.icon) :
+        null;
       let hideOnSwipe: boolean = true;
       let hideOnTap: boolean = true;
 
@@ -71,14 +71,14 @@ export class Feedback extends FeedbackCommon {
     });
   }
 
-  hide(options?: FeedbackHideOptions): Promise<any> {
+  hide(options ? : FeedbackHideOptions): Promise < any > {
     return new Promise((resolve, reject) => {
       ISMessages.hideAlertAnimated(true);
       resolve();
     });
   }
 
-  private static getType(type?: FeedbackType) {
+  private static getType(type ? : FeedbackType) {
     if (
       type === undefined ||
       type === null ||
@@ -96,7 +96,7 @@ export class Feedback extends FeedbackCommon {
     }
   }
 
-  private static getPosition(position?: FeedbackPosition) {
+  private static getPosition(position ? : FeedbackPosition) {
     if (!position || (position as FeedbackPosition) === FeedbackPosition.Top) {
       return ISAlertPosition.Top;
     } else {
