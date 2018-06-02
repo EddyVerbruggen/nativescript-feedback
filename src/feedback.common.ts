@@ -68,6 +68,13 @@ export interface FeedbackShowOptions {
    */
   onTap?: Function;
   /**
+  * The font name.
+  * be aware ios needs the font name and android the file name so make sure they are the same
+  * or the file name is the font name without spaces i.e "font name" => "filename"
+  *  * Default to system font.
+  */
+  font?: string;
+  /**
    * Android-specific options
    */
   android?: {

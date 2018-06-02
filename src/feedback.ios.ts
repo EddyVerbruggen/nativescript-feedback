@@ -37,12 +37,22 @@ export class Feedback extends FeedbackCommon {
       if (options.titleColor) {
         message.titleLabelTextColor = options.titleColor.ios;
       }
-      message.titleLabelFont = UIFont.boldSystemFontOfSize(15.0);
+
+      if (options.font) {
+        message.titleLabelFont = UIFont.fontWithNameSize(options.font, 15.0);
+      } else {
+        message.titleLabelFont = UIFont.boldSystemFontOfSize(15.0);
+      }
 
       if (options.messageColor) {
         message.messageLabelTextColor = options.messageColor.ios;
       }
-      message.messageLabelFont = UIFont.systemFontOfSize(13.0);
+
+      if (options.font) {
+        message.messageLabelFont = UIFont.fontWithNameSize(options.font, 13.0);
+      } else {
+        message.messageLabelFont = UIFont.systemFontOfSize(13.0);
+      }
 
       message.showDidHide(() => {
         if (options.onTap) {

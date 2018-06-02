@@ -66,6 +66,15 @@ export class Feedback extends FeedbackCommon {
         messageView.setTextColor(options.messageColor.android);
       }
 
+      if (options.font) {
+          const assetManger = utils.ad.getApplicationContext().getAssets();
+          const fontPath = `app/fonts/${options.font.replace(/\s+/g, '')}.ttf`;
+          const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
+
+          this.lastAlert.getTitle().setTypeface(typeface);
+          this.lastAlert.getText().setTypeface(typeface);
+      }
+
       if (options.android && options.android.iconColor) {
         let iconView = this.lastAlert.getIcon(); // android.widget.ImageView
         iconView.setColorFilter(options.android.iconColor.android);
