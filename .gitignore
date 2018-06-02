@@ -5,6 +5,7 @@
 *.js.map
 *.log.*
 src/*.d.ts
+src/platforms/android/*.aar
 build/
 !src/index.d.ts
 !src/references.d.ts

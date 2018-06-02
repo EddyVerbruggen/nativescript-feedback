@@ -68,8 +68,12 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | --- | --- | --- |
 | `title` | `undefined` | The **bold** title at the top. |
 | `titleColor` | `new Color("white")` | The title's color. |
+| `titleFont` | Bold system font | iOS needs the font name and android the file name. See the demo for examples. |
+| `titleSize` | `16` | The size of the title font. |
 | `message` | `undefined` | The message below the title. |
 | `messageColor` | `new Color("white")` | The message's color. |
+| `messageFont` | System font | iOS needs the font name and android the file name. See the demo for examples. |
+| `messageSize` | `13` | The size of the message font.|
 | `duration` | `4000` | The duration to show the feedback (milliseconds). |
 | `type` | `FeedbackType.Custom` | One of `.Custom`, `.Success`, `.Warning`, `.Error`, `.Info`. Each with a distinct style as show in the animations above. You can still override all other properties according to your liking. |
 | `position` | `FeedbackPosition.Top` | Either `.Top` or `.Bottom` *(iOS only)*. |

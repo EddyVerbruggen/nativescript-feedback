@@ -3,3 +3,6 @@
 !feedback.*.d.ts
 !index.d.ts
 tsconfig.json
+platforms/android/*
+!platforms/android/include.gradle
+!platforms/android/*.aar

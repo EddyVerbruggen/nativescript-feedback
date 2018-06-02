@@ -5,6 +5,7 @@ import {
   FeedbackPosition,
   FeedbackType
 } from "./feedback.common";
+import { Font, FontStyle, FontWeight } from "tns-core-modules/ui/styling/font";
 
 declare const ISAlertTypeSuccess: any;
 
@@ -38,20 +39,23 @@ export class Feedback extends FeedbackCommon {
         message.titleLabelTextColor = options.titleColor.ios;
       }
 
-      if (options.font) {
-        message.titleLabelFont = UIFont.fontWithNameSize(options.font, 15.0);
+      const titleSize = options.titleSize || 16;
+      const messageSize = options.messageSize || 13;
+
+      if (options.titleFont) {
+        message.titleLabelFont = UIFont.fontWithNameSize(options.titleFont, titleSize);
       } else {
-        message.titleLabelFont = UIFont.boldSystemFontOfSize(15.0);
+        message.titleLabelFont = UIFont.boldSystemFontOfSize(titleSize);
+      }
+
+      if (options.messageFont) {
+        message.messageLabelFont = UIFont.fontWithNameSize(options.messageFont, messageSize);
+      } else {
+        message.messageLabelFont = UIFont.systemFontOfSize(messageSize);
       }
 
       if (options.messageColor) {
         message.messageLabelTextColor = options.messageColor.ios;
-      }
-
-      if (options.font) {
-        message.messageLabelFont = UIFont.fontWithNameSize(options.font, 13.0);
-      } else {
-        message.messageLabelFont = UIFont.systemFontOfSize(13.0);
       }
 
       message.showDidHide(() => {

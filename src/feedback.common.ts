@@ -19,6 +19,12 @@ export interface FeedbackShowOptions {
    * Default undefined.
    */
   title?: string;
+
+  /**
+   * Default 15.
+   */
+  titleSize?: number;
+
   /**
    * The title's color.
    * Default new Color("white").
@@ -33,6 +39,12 @@ export interface FeedbackShowOptions {
    * The message's color.
    * Default new Color("white").
    */
+
+  /**
+   * Default 13.
+   */
+  messageSize?: number;
+
   messageColor?: Color;
   /**
    * The duration to show the feedback (milliseconds).
@@ -67,13 +79,21 @@ export interface FeedbackShowOptions {
    * Default undefined.
    */
   onTap?: Function;
+
   /**
-  * The font name.
-  * be aware ios needs the font name and android the file name so make sure they are the same
-  * or the file name is the font name without spaces i.e "font name" => "filename"
-  *  * Default to system font.
-  */
-  font?: string;
+   * The font name for the title.
+   * Be aware iOS needs the font name and android the file name.
+   * Default bold system font.
+   */
+  titleFont?: string;
+
+  /**
+   * The font name for the message.
+   * Be aware iOS needs the font name and android the file name.
+   * Default system font.
+   */
+  messageFont?: string;
+
   /**
    * Android-specific options
    */
@@ -90,12 +110,16 @@ export interface FeedbackHideOptions {
 
 export interface FeedbackApi {
   show(options: FeedbackShowOptions): Promise<any>;
+
   hide(options?: FeedbackHideOptions): Promise<any>;
 
   // convenience funtions
   success(options: FeedbackShowOptions): Promise<any>;
+
   warning(options: FeedbackShowOptions): Promise<any>;
+
   error(options: FeedbackShowOptions): Promise<any>;
+
   info(options: FeedbackShowOptions): Promise<any>;
 }
 

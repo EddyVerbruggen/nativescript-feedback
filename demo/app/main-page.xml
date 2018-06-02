@@ -12,7 +12,8 @@
         <Button text="Error, 5s, Bottom (iOS)" tap="{{ showErrorBottom }}" class="button button-error" />
         <Button text="No icon" tap="{{ showNoIcon }}" class="button button-custom" />
         <Button text="Custom icon" tap="{{ showCustomIcon }}" class="button button-custom-alt" />
-        <Button text="Custom font" tap="{{ showCustomFont }}" class="button button-custom-alt" />
+        <Button text="Custom font" tap="{{ showCustomFont }}" class="button button-font" />
+        <Button text="Another custom font" tap="{{ showCustomFont2 }}" class="button button-font" />
         <Button text="Black icon" tap="{{ showBlackCustomIcon }}" class="button button-custom-alt" />
         <Button text="Hide!" tap="{{ hide }}" class="button button-hide" />
       </WrapLayout>

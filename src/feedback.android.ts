@@ -3,7 +3,7 @@ import * as application from "tns-core-modules/application";
 import * as utils from "tns-core-modules/utils/utils";
 import { Color } from "tns-core-modules/color";
 
-declare let com: any;
+declare let com, android: any;
 
 // Export the enums for devs not using TS
 exports.FeedbackPosition = FeedbackPosition;
@@ -37,6 +37,20 @@ export class Feedback extends FeedbackCommon {
         }
       }
 
+      if (options.titleFont) {
+        const assetManger = utils.ad.getApplicationContext().getAssets();
+        const fontPath = `app/fonts/${options.titleFont}`;
+        const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
+        alerter.setTitleTypeface(typeface);
+      }
+
+      if (options.messageFont) {
+        const assetManger = utils.ad.getApplicationContext().getAssets();
+        const fontPath = `app/fonts/${options.messageFont}`;
+        const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
+        alerter.setTextTypeface(typeface);
+      }
+
       alerter.setOnClickListener(
           new android.view.View.OnClickListener({
             onClick: (view => {
@@ -66,14 +80,11 @@ export class Feedback extends FeedbackCommon {
         messageView.setTextColor(options.messageColor.android);
       }
 
-      if (options.font) {
-          const assetManger = utils.ad.getApplicationContext().getAssets();
-          const fontPath = `app/fonts/${options.font.replace(/\s+/g, '')}.ttf`;
-          const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
+      const titleSize = options.titleSize || 16;
+      const messageSize = options.messageSize || 13;
 
-          this.lastAlert.getTitle().setTypeface(typeface);
-          this.lastAlert.getText().setTypeface(typeface);
-      }
+      this.lastAlert.getTitle().setTextSize(titleSize);
+      this.lastAlert.getText().setTextSize(messageSize);
 
       if (options.android && options.android.iconColor) {
         let iconView = this.lastAlert.getIcon(); // android.widget.ImageView
