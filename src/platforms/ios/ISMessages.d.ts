@@ -40,7 +40,7 @@ declare class ISMessages extends UIViewController {
 
   titleLabelTextColor: UIColor;
 
-  showDidHide(handler: () => void, didHide: (p1: boolean) => void): void;
+  showDidBeginDidHide(handler: () => void, didBegin:(animating: boolean) => void, didHide: (p1: boolean) => void): void;
 }
 
 declare var ISMessagesVersionNumber: number;

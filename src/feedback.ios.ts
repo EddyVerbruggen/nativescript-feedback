@@ -5,9 +5,6 @@ import {
   FeedbackPosition,
   FeedbackType
 } from "./feedback.common";
-import { Font, FontStyle, FontWeight } from "tns-core-modules/ui/styling/font";
-
-declare const ISAlertTypeSuccess: any;
 
 // Export the enums for devs not using TS
 exports.FeedbackPosition = FeedbackPosition;
@@ -16,7 +13,7 @@ exports.FeedbackType = FeedbackType;
 export class Feedback extends FeedbackCommon {
 
   show(options: FeedbackShowOptions): Promise<any> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       let icon: UIImage = options.icon ? UIImage.imageNamed(options.icon) : null;
       let hideOnSwipe: boolean = true;
       let hideOnTap: boolean = true;
@@ -58,12 +55,18 @@ export class Feedback extends FeedbackCommon {
         message.messageLabelTextColor = options.messageColor.ios;
       }
 
-      message.showDidHide(() => {
+      message.showDidBeginDidHide(() => {
         if (options.onTap) {
           options.onTap();
         }
+      }, (animating: boolean) => {
+        if (options.onShow) {
+          options.onShow(animating);
+        }
       }, (hidden: boolean) => {
-        // nothing to do on hide
+        if (options.onHide) {
+          options.onHide();
+        }
       });
 
       resolve();
@@ -71,7 +74,7 @@ export class Feedback extends FeedbackCommon {
   }
 
   hide(options?: FeedbackHideOptions): Promise<any> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       ISMessages.hideAlertAnimated(true);
       resolve();
     });
