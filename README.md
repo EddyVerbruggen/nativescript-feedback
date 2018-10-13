@@ -80,6 +80,8 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/master/demo/app/main-view-model.ts#L74). Want no icon at all? Don't set a `type`. |
 | `android.iconColor` | See description | On iOS the icon color is as-is, but on Android it's white. Set this color to override the latter (also see the TypeScript example below). |
 | `onTap`| `undefined` | A callback function that gets invoked when the user tapped your feedback. |
+| `onShow`| `undefined` | A callback for when the feedback is shown. iOS note: is called twice: once when animating and once when done. |
+| `onHide`| `undefined` | A callback for when the feedback is hidden. |
 
 One of the examples in [the demo app](demo/index.html) shows a custom icon and alternative colors. You'd get there by doing:
 
@@ -99,7 +101,9 @@ this.feedback.show({
   duration: 3000,
   backgroundColor: new color.Color("yellowgreen"),
   icon: "customicon", // in App_Resources/platform folders
-  onTap: function() { console.log("showCustomIcon tapped") }
+  onTap: function() { console.log("showCustomIcon tapped") },
+  onShow: function(animating) { console.log(animating ? "showCustomIcon animating" : "showCustomIcon shown") },
+  onHide: function() { console.log("showCustomIcon hidden") }
 });
 ```
 
@@ -121,7 +125,9 @@ this.feedback.show({
   android: {
     iconColor: new Color("#222222") // optional, leave out if you don't need it
   },
-  onTap: () => { console.log("showCustomIcon tapped") }
+  onTap: () => console.log("showCustomIcon tapped"),
+  onShow: animating => console.log(animating ? "showCustomIcon animating" : "showCustomIcon shown"),
+  onHide: () => console.log("showCustomIcon hidden")
 });
 ```
 

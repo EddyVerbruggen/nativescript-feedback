@@ -88,7 +88,7 @@ export interface FeedbackShowOptions {
 
   /**
    * A callback for when the feedback is shown.
-   * iOS only: is called twice: once when animating and once when done.
+   * iOS note: is called twice: once when animating and once when done.
    * Default undefined.
    */
   onShow?: (animating?: boolean) => void;
