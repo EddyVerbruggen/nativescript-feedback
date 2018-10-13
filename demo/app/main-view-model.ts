@@ -46,7 +46,17 @@ export class HelloWorldModel extends Observable {
       type: FeedbackType.Info,
       onTap: () => {
         console.log("showInfo tapped");
-      }
+      },
+      onShow: (animating?: boolean) => {
+        if (animating) {
+          console.log('showInfo animating');
+        } else {
+          console.log("showInfo shown");
+        }
+      },
+      onHide: () => {
+        console.log("showInfo hidden");
+      },
     });
   }
 

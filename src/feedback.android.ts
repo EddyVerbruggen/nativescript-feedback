@@ -62,6 +62,22 @@ export class Feedback extends FeedbackCommon {
           })
       );
 
+      if (options.onShow) {
+        alerter.setOnShowListener(
+          new com.tapadoo.alerter.OnShowAlertListener({
+            onShow: () => options.onShow(),
+          })
+        );
+      }
+
+      if (options.onHide) {
+        alerter.setOnHideListener(
+          new com.tapadoo.alerter.OnHideAlertListener({
+            onHide: () => options.onHide(),
+          })
+        );
+      }
+
       this.lastAlert = alerter.show();
 
       if (options.backgroundColor) {

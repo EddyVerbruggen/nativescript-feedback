@@ -81,6 +81,19 @@ export interface FeedbackShowOptions {
   onTap?: Function;
 
   /**
+   * A callback for when the feedback is hidden.
+   * Default undefined.
+   */
+  onHide?: () => void;
+
+  /**
+   * A callback for when the feedback is shown.
+   * iOS only: is called twice: once when animating and once when done.
+   * Default undefined.
+   */
+  onShow?: (animating?: boolean) => void;
+
+  /**
    * The font name for the title.
    * Be aware iOS needs the font name and android the file name.
    * Default bold system font.
