@@ -78,7 +78,7 @@ export interface FeedbackShowOptions {
    * A callback function that gets invoked when the user tapped your feedback.
    * Default undefined.
    */
-  onTap?: Function;
+  onTap?: () => void;
 
   /**
    * A callback for when the feedback is hidden.
