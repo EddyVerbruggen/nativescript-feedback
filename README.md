@@ -44,7 +44,7 @@ var feedback = new FeedbackPlugin.Feedback();
 ```js
 import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
 
-export Class MyClassWithFeedback {
+export class MyClassWithFeedback {
   private feedback: Feedback;
   
   constructor() {
