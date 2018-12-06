@@ -1,1 +1,1 @@
-pod 'ISMessages', :git => 'https://github.com/EddyVerbruggen/ISMessages.git', :commit => '689e8efbfb73f5ecc0a5ee87cc6fb47501b08ded'
+pod 'ISMessages', :git => 'https://github.com/EddyVerbruggen/ISMessages.git', :commit => '580ac8cab611e2f92ebdd62b2201f9dada36ccd4'
