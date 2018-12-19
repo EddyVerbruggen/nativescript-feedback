@@ -43,7 +43,8 @@
     "Notification",
     "Message",
     "Toast",
-    "Snackbar"
+    "Snackbar",
+    "Banner"
   ],
   "author": {
     "name": "Eddy Verbruggen",
