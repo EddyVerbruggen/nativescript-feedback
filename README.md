@@ -19,11 +19,28 @@
 
 _iOS and Android running the included demo - [much better framerate on YouTube](https://www.youtube.com/watch?v=A3jX5g9msm0)!_
 
-## Demo app (Core)
-Check out the [demo](/demo) folder.
+## Demo apps
+ 
+### NativeScript-Core (XML)
+Check out the [demo](/demo) folder. This is how to clone and run it:
 
-## Demo app (Angular)
+```bash
+git clone https://github.com/EddyVerbruggen/nativescript-feedback
+cd nativescript-feedback/src
+npm run demo.ios # or demo.android
+```
+
+### NativeScript-Angular
 This plugin is part of the [plugin showcase app](https://github.com/EddyVerbruggen/nativescript-pluginshowcase/tree/master/app/feedback) I built using Angular.
+
+### NativeScript-Vue
+Check out the [demo-vue](/demo-vue) folder. This is how to clone and run it:
+
+```bash
+git clone https://github.com/EddyVerbruggen/nativescript-feedback
+cd nativescript-feedback/src
+npm run demo-vue.ios # or demo-vue.android
+```
 
 ## Installation
 ```bash
@@ -77,8 +94,8 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | `messageFont` | System font | iOS needs the font name and android the file name. See the demo for examples. |
 | `messageSize` | `13` | The size of the message font.|
 | `duration` | `4000` | The duration to show the feedback (milliseconds). |
-| `type` | `FeedbackType.Custom` | One of `.Custom`, `.Success`, `.Warning`, `.Error`, `.Info`. Each with a distinct style as show in the animations above. You can still override all other properties according to your liking. |
-| `position` | `FeedbackPosition.Top` | Either `.Top` or `.Bottom` *(iOS only)*. |
+| `type` | `[FeedbackType](https://github.com/EddyVerbruggen/nativescript-feedback/blob/36bdf322837bf47fc2124b3e8f779227969d3f43/src/feedback.common.ts#L8-L14).Custom` | One of `.Custom`, `.Success`, `.Warning`, `.Error`, `.Info`. Each with a distinct style as show in the animations above. You can still override all other properties according to your liking. |
+| `position` | `[FeedbackPosition](https://github.com/EddyVerbruggen/nativescript-feedback/blob/36bdf322837bf47fc2124b3e8f779227969d3f43/src/feedback.common.ts#L3-L6).Top` | Either `.Top` or `.Bottom` *(iOS only)*. |
 | `backgroundColor` | Depends on the `type` | The background's color. |
 | `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/master/demo/app/main-view-model.ts#L74). Want no icon at all? Don't set a `type`. |
 | `android.iconColor` | See description | On iOS the icon color is as-is, but on Android it's white. Set this color to override the latter (also see the TypeScript example below). |
