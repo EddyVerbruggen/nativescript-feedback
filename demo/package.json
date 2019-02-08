@@ -29,5 +29,8 @@
     "tns-platform-declarations": "~5.1.0",
     "tslint": "~5.4.3",
     "typescript": "~3.1.0"
-  }
+  },
+  "scripts": {
+    "build.plugin": "cd ../src && npm run build"
+  },
 }
