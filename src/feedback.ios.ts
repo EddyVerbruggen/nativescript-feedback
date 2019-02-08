@@ -10,6 +10,8 @@ import {
 exports.FeedbackPosition = FeedbackPosition;
 exports.FeedbackType = FeedbackType;
 
+declare const ISMessages, ISAlertPosition, ISAlertType: any;
+
 export class Feedback extends FeedbackCommon {
 
   show(options: FeedbackShowOptions): Promise<any> {
@@ -18,7 +20,7 @@ export class Feedback extends FeedbackCommon {
       let hideOnSwipe: boolean = true;
       let hideOnTap: boolean = true;
 
-      let message: ISMessages = ISMessages.cardAlertWithTitleMessageIconImageDurationHideOnSwipeHideOnTapAlertTypeAlertPosition(
+      let message = ISMessages.cardAlertWithTitleMessageIconImageDurationHideOnSwipeHideOnTapAlertTypeAlertPosition(
           options.title,
           options.message,
           icon,
