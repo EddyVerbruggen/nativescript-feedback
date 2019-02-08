@@ -8,7 +8,7 @@ dependencies {
     if (project.hasProperty("supportVersion")) {
         supportVer = supportVersion
     }
-    compile "com.android.support:appcompat-v7:$supportVer"
+    implementation "com.android.support:appcompat-v7:$supportVer"
     // note that 3.x is written in Kotlin which is not currently working in {N}
-    compile 'com.tapadoo.android:alerter:2.0.5'
+    implementation 'com.tapadoo.android:alerter:2.0.5'
 }
