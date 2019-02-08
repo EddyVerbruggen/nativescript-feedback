@@ -32,5 +32,5 @@
   },
   "scripts": {
     "build.plugin": "cd ../src && npm run build"
-  },
+  }
 }
