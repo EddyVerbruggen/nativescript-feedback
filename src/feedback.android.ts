@@ -13,7 +13,7 @@ export class Feedback extends FeedbackCommon {
 
   private lastAlert: any = null;
 
-  show(options: FeedbackShowOptions): Promise<any> {
+  show(options: FeedbackShowOptions): Promise<void> {
     return new Promise((resolve, reject) => {
       this.lastAlert = null;
       let alerter = com.tapadoo.alerter.Alerter.create(application.android.foregroundActivity)
@@ -144,7 +144,7 @@ export class Feedback extends FeedbackCommon {
     }
   }
 
-  hide(options?: FeedbackHideOptions): Promise<any> {
+  hide(options?: FeedbackHideOptions): Promise<void> {
     return new Promise((resolve, reject) => {
       if (this.lastAlert !== null) {
         this.lastAlert.hide();
