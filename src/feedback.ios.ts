@@ -14,7 +14,7 @@ declare const ISMessages, ISAlertPosition, ISAlertType: any;
 
 export class Feedback extends FeedbackCommon {
 
-  show(options: FeedbackShowOptions): Promise<any> {
+  show(options: FeedbackShowOptions): Promise<void> {
     return new Promise((resolve) => {
       let icon: UIImage = options.icon ? UIImage.imageNamed(options.icon) : null;
       let hideOnSwipe: boolean = true;
@@ -75,7 +75,7 @@ export class Feedback extends FeedbackCommon {
     });
   }
 
-  hide(options?: FeedbackHideOptions): Promise<any> {
+  hide(options?: FeedbackHideOptions): Promise<void> {
     return new Promise((resolve) => {
       ISMessages.hideAlertAnimated(true);
       resolve();

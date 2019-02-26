@@ -122,41 +122,41 @@ export interface FeedbackHideOptions {
 }
 
 export interface FeedbackApi {
-  show(options: FeedbackShowOptions): Promise<any>;
+  show(options: FeedbackShowOptions): Promise<void>;
 
-  hide(options?: FeedbackHideOptions): Promise<any>;
+  hide(options?: FeedbackHideOptions): Promise<void>;
 
   // convenience funtions
-  success(options: FeedbackShowOptions): Promise<any>;
+  success(options: FeedbackShowOptions): Promise<void>;
 
-  warning(options: FeedbackShowOptions): Promise<any>;
+  warning(options: FeedbackShowOptions): Promise<void>;
 
-  error(options: FeedbackShowOptions): Promise<any>;
+  error(options: FeedbackShowOptions): Promise<void>;
 
-  info(options: FeedbackShowOptions): Promise<any>;
+  info(options: FeedbackShowOptions): Promise<void>;
 }
 
 export abstract class FeedbackCommon implements FeedbackApi {
-  abstract show(options: FeedbackShowOptions): Promise<any>;
+  abstract show(options: FeedbackShowOptions): Promise<void>;
 
-  abstract hide(options?: FeedbackHideOptions): Promise<any>;
+  abstract hide(options?: FeedbackHideOptions): Promise<void>;
 
-  success(options: FeedbackShowOptions): Promise<any> {
+  success(options: FeedbackShowOptions): Promise<void> {
     options.type = FeedbackType.Success;
     return this.show(options);
   }
 
-  warning(options: FeedbackShowOptions): Promise<any> {
+  warning(options: FeedbackShowOptions): Promise<void> {
     options.type = FeedbackType.Warning;
     return this.show(options);
   }
 
-  error(options: FeedbackShowOptions): Promise<any> {
+  error(options: FeedbackShowOptions): Promise<void> {
     options.type = FeedbackType.Error;
     return this.show(options);
   }
 
-  info(options: FeedbackShowOptions): Promise<any> {
+  info(options: FeedbackShowOptions): Promise<void> {
     options.type = FeedbackType.Info;
     return this.show(options);
   }
