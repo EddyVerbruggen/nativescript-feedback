@@ -145,11 +145,13 @@ export class Feedback extends FeedbackCommon {
   }
 
   hide(options?: FeedbackHideOptions): Promise<void> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       if (this.lastAlert !== null) {
         this.lastAlert.hide();
         this.lastAlert = null;
       }
+
+      resolve();
     });
   }
 }
