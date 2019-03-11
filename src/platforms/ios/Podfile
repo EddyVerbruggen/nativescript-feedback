@@ -1,3 +1,1 @@
-platform :ios, '9.0'
-
 pod 'ISMessages', :git => 'https://github.com/EddyVerbruggen/ISMessages.git', :commit => '9cda6db2fcb11e62b0332eedb24dbefcbb69435f'
