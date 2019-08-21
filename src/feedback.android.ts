@@ -5,9 +5,8 @@ import { Color } from "tns-core-modules/color";
 
 declare let com, android: any;
 
-// Export the enums for devs not using TS
-exports.FeedbackPosition = FeedbackPosition;
-exports.FeedbackType = FeedbackType;
+export { FeedbackType };
+export { FeedbackPosition };
 
 export class Feedback extends FeedbackCommon {
 

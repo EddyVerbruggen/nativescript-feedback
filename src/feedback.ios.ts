@@ -6,9 +6,8 @@ import {
   FeedbackType
 } from "./feedback.common";
 
-// Export the enums for devs not using TS
-exports.FeedbackPosition = FeedbackPosition;
-exports.FeedbackType = FeedbackType;
+export { FeedbackType };
+export { FeedbackPosition };
 
 declare const ISMessages, ISAlertPosition, ISAlertType: any;
 
