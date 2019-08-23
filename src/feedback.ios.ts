@@ -29,7 +29,35 @@ export class Feedback extends FeedbackCommon {
           Feedback.getType(options.type),
           Feedback.getPosition(options.position));
 
-      if (options.backgroundColor) {
+      if (options.gradientColors) {
+        message.alertViewBackgroundColor = UIColor.clearColor;
+
+        const layerGradient = CAGradientLayer.layer();
+        layerGradient.colors = NSArray.arrayWithArray(options.gradientColors.map(c => c.ios.CGColor));
+
+        const gradientDirection = options.gradientDirection || 'down';
+        switch (gradientDirection) {
+          case 'up':
+            layerGradient.startPoint = CGPointMake(.5, 1);
+            layerGradient.endPoint = CGPointMake(.5, 0);
+          break;
+          case 'left':
+            layerGradient.startPoint = CGPointMake(.5, 0);
+            layerGradient.endPoint = CGPointMake(.5, 1);
+          break;
+          case 'right':
+            layerGradient.startPoint = CGPointMake(0, .5);
+            layerGradient.endPoint = CGPointMake(1, .5);
+          break;
+          default:
+            layerGradient.startPoint = CGPointMake(.5, 0);
+            layerGradient.endPoint = CGPointMake(.5, 1);
+            break;
+        }
+        layerGradient.frame = message.view.bounds;
+
+        message.view.layer.insertSublayerAtIndex(layerGradient, 0);
+      } else if (options.backgroundColor) {
         message.alertViewBackgroundColor = options.backgroundColor.ios;
       }
 
