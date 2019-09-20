@@ -115,11 +115,11 @@ export interface FeedbackShowOptions {
      * The icon's color. Android only as iOS uses the icon's color, but Android is otherwise always white.
      */
     iconColor?: Color;
-    
+
     /**
      * This dictates whether the icon should pulse, Android only as the icon does not pulse on iOS.
      */
-    iconPulseEnabled?: boolean
+    iconPulseEnabled?: boolean;
   };
 }
 
