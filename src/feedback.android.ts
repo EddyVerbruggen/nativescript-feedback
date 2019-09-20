@@ -36,6 +36,10 @@ export class Feedback extends FeedbackCommon {
         }
       }
 
+      if (options.android && options.android.iconPulseEnabled) {
+        alerter.enableIconPulse(options.android.iconPulseEnabled);
+      }
+
       if (options.titleFont) {
         const assetManger = utils.ad.getApplicationContext().getAssets();
         const fontPath = `app/fonts/${options.titleFont}`;
