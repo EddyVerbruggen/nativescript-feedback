@@ -118,6 +118,7 @@ export interface FeedbackShowOptions {
 
     /**
      * This dictates whether the icon should pulse, Android only as the icon does not pulse on iOS.
+     * Default true.
      */
     iconPulseEnabled?: boolean;
   };

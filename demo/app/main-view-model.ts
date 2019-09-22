@@ -1,6 +1,6 @@
-import { Observable } from "tns-core-modules/data/observable";
+import { Feedback, FeedbackPosition, FeedbackType } from "nativescript-feedback";
 import { Color } from "tns-core-modules/color";
-import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
+import { Observable } from "tns-core-modules/data/observable";
 import { isIOS } from "tns-core-modules/platform";
 
 export class HelloWorldModel extends Observable {
@@ -16,10 +16,7 @@ export class HelloWorldModel extends Observable {
       title: "Successfully shown myself!",
       message: "I'm configured to hide after 2.5 seconds.",
       duration: 2500,
-      // type: FeedbackType.Success, // no need to specify when using 'success' instead of 'show'
-      onTap: () => {
-        console.log("showSuccess tapped");
-      }
+      onTap: () => console.log("showSuccess tapped")
     });
   }
 
@@ -32,9 +29,7 @@ export class HelloWorldModel extends Observable {
       duration: 2500,
       type: FeedbackType.Success,
       backgroundColor: new Color("lightskyblue"),
-      onTap: () => {
-        console.log("showSuccessAltColor tapped");
-      }
+      onTap: () => console.log("showSuccessAltColor tapped")
     });
   }
 
@@ -44,19 +39,9 @@ export class HelloWorldModel extends Observable {
       message: "This is the default Info style.",
       duration: 2000,
       type: FeedbackType.Info,
-      onTap: () => {
-        console.log("showInfo tapped");
-      },
-      onShow: (animating?: boolean) => {
-        if (animating) {
-          console.log('showInfo animating');
-        } else {
-          console.log("showInfo shown");
-        }
-      },
-      onHide: () => {
-        console.log("showInfo hidden");
-      },
+      onTap: () => console.log("showInfo tapped"),
+      onShow: (animating?: boolean) => console.log(`showInfo ${animating ? 'animating' : 'shown'}`),
+      onHide: () => console.log("showInfo hidden")
     });
   }
 
@@ -67,9 +52,7 @@ export class HelloWorldModel extends Observable {
       duration: 4000,
       position: FeedbackPosition.Top,
       type: FeedbackType.Warning,
-      onTap: () => {
-        console.log("showWarning tapped");
-      }
+      onTap: () => console.log("showWarning tapped")
     });
   }
 
@@ -78,9 +61,7 @@ export class HelloWorldModel extends Observable {
       title: "Title only, not even an icon..",
       duration: 3000,
       // type: FeedbackType.Custom,
-      onTap: () => {
-        console.log("showNoIcon tapped");
-      }
+      onTap: () => console.log("showNoIcon tapped")
     });
   }
 
@@ -93,13 +74,12 @@ export class HelloWorldModel extends Observable {
       duration: 3000,
       backgroundColor: new Color("yellowgreen"),
       icon: "customicon", // in App_Resources/platform folders
-      onTap: () => {
-        console.log("showCustomIcon tapped");
-      }
+      onTap: () => console.log("showCustomIcon tapped")
     });
   }
 
   public showBlackCustomIcon(): void {
+    console.log("showBlackCustomIcon");
     this.feedback.show({
       title: "Dude!",
       titleColor: new Color("#222222"),
@@ -110,10 +90,9 @@ export class HelloWorldModel extends Observable {
       icon: "issue7icon", // in App_Resources/platform folders
       android: {
         iconColor: new Color("black"),
+        iconPulseEnabled: false
       },
-      onTap: () => {
-        console.log("showAnotherCustomIcon tapped");
-      }
+      onTap: () => console.log("showAnotherCustomIcon tapped")
     });
   }
 
@@ -123,9 +102,7 @@ export class HelloWorldModel extends Observable {
       message: "Not too long a text here. But it could be..",
       duration: 1000,
       type: FeedbackType.Error,
-      onTap: () => {
-        console.log("showError tapped");
-      }
+      onTap: () => console.log("showError tapped")
     });
   }
 
@@ -138,9 +115,7 @@ export class HelloWorldModel extends Observable {
       duration: 5000,
       position: FeedbackPosition.Bottom,
       type: FeedbackType.Error,
-      onTap: () => {
-        console.log("showErrorBottom tapped");
-      }
+      onTap: () => console.log("showErrorBottom tapped")
     });
   }
 

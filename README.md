@@ -100,6 +100,7 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | `backgroundColor` | Depends on the `type` | The background's color. |
 | `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/master/demo/app/main-view-model.ts#L74). Want no icon at all? Don't set a `type`. |
 | `android.iconColor` | See description | On iOS the icon color is as-is, but on Android it's white. Set this color to override the latter (also see the TypeScript example below). |
+| `android.iconPulseEnabled` | `true` | On Android you can disable the pulsating effect of the icon. |
 | `onTap`| `undefined` | A callback function that gets invoked when the user tapped your feedback. |
 | `onShow`| `undefined` | A callback for when the feedback is shown. iOS note: is called twice: once when animating and once when done. |
 | `onHide`| `undefined` | A callback for when the feedback is hidden. |

@@ -36,7 +36,7 @@ export class Feedback extends FeedbackCommon {
         }
       }
 
-      if (options.android && options.android.iconPulseEnabled) {
+      if (options.android && options.android.iconPulseEnabled !== undefined) {
         alerter.enableIconPulse(options.android.iconPulseEnabled);
       }
 
