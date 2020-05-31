@@ -3,7 +3,7 @@ import * as application from "tns-core-modules/application";
 import * as utils from "tns-core-modules/utils/utils";
 import { Color } from "tns-core-modules/color";
 
-declare let com, android: any;
+declare let com, android, Gravity: any;
 
 export { FeedbackType };
 export { FeedbackPosition };
@@ -16,9 +16,15 @@ export class Feedback extends FeedbackCommon {
     return new Promise((resolve, reject) => {
       this.lastAlert = null;
       let alerter = com.tapadoo.alerter.Alerter.create(application.android.foregroundActivity)
-          .setTitle(options.title)
-          .setText(options.message)
+          .setLayoutGravity(Feedback.getPosition(options.position))
+          .setIconColorFilter(0)
           .setDuration(options.duration ? options.duration : 4000);
+      if (options.title) {
+          alerter.setTitle(options.title);
+      }
+      if (options.message) {
+          alerter.setText(options.message);
+      }
 
       if (options.icon) {
         let resourceId: number = Feedback.getIconResourceId(options.icon);
@@ -57,7 +63,7 @@ export class Feedback extends FeedbackCommon {
       alerter.setOnClickListener(
           new android.view.View.OnClickListener({
             onClick: (view => {
-              this.lastAlert.hide();
+              com.tapadoo.alerter.Alerter.hide();
               if (options.onTap) {
                 options.onTap();
               }
@@ -147,10 +153,18 @@ export class Feedback extends FeedbackCommon {
     }
   }
 
+  private static getPosition(position?: FeedbackPosition) {
+    if (!position || (position as FeedbackPosition) === FeedbackPosition.Top) {
+      return android.view.Gravity.TOP;
+    } else {
+      return android.view.Gravity.BOTTOM;
+    }
+  }
+
   hide(options?: FeedbackHideOptions): Promise<void> {
     return new Promise((resolve) => {
-      if (this.lastAlert !== null) {
-        this.lastAlert.hide();
+      if (com.tapadoo.alerter.Alerter.isShowing()) {
+        com.tapadoo.alerter.Alerter.hide();
         this.lastAlert = null;
       }
 
