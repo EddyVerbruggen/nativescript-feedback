@@ -96,7 +96,7 @@ However, there are a lot of things you may want to tweak. All of which are optio
 | `messageSize` | `13` | The size of the message font.|
 | `duration` | `4000` | The duration to show the feedback (milliseconds). |
 | `type` | [`FeedbackType.Custom`](https://github.com/EddyVerbruggen/nativescript-feedback/blob/36bdf322837bf47fc2124b3e8f779227969d3f43/src/feedback.common.ts#L13) | One of `.Custom`, `.Success`, `.Warning`, `.Error`, `.Info`. Each with a distinct style as show in the animations above. You can still override all other properties according to your liking. |
-| `position` | [`FeedbackPosition.Top`](https://github.com/EddyVerbruggen/nativescript-feedback/blob/36bdf322837bf47fc2124b3e8f779227969d3f43/src/feedback.common.ts#L4) | Either `.Top` or `.Bottom` *(iOS only)*. |
+| `position` | [`FeedbackPosition.Top`](https://github.com/EddyVerbruggen/nativescript-feedback/blob/36bdf322837bf47fc2124b3e8f779227969d3f43/src/feedback.common.ts#L4) | Either `.Top` or `.Bottom`. |
 | `backgroundColor` | Depends on the `type` | The background's color. |
 | `icon` | Depends on the `type` | A custom icon shown on the left. Loaded from `App_Resources/<platform>` folders. [Example here](https://github.com/EddyVerbruggen/nativescript-feedback/blob/master/demo/app/main-view-model.ts#L74). Want no icon at all? Don't set a `type`. |
 | `android.iconColor` | See description | On iOS the icon color is as-is, but on Android it's white. Set this color to override the latter (also see the TypeScript example below). |
@@ -137,7 +137,7 @@ import { Color } from "tns-core-modules/color";
 this.feedback.show({
   title: "Thumbs up!",
   titleColor: new Color("#222222"),
-  position: FeedbackPosition.Bottom, // iOS only
+  position: FeedbackPosition.Bottom,
   type: FeedbackType.Custom, // this is the default type, by the way
   message: "Custom colors and icon. Loaded from the App_Resources folder.",
   messageColor: new Color("#333333"),
