@@ -3,7 +3,7 @@ import * as application from "tns-core-modules/application";
 import * as utils from "tns-core-modules/utils/utils";
 import { Color } from "tns-core-modules/color";
 
-declare let com, android, Gravity: any;
+declare let com, android: any;
 
 export { FeedbackType };
 export { FeedbackPosition };

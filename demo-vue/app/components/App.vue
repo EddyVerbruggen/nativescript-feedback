@@ -29,7 +29,7 @@
         feedback.show({
           title: "Thumbs up!",
           titleColor: new Color("#222222"),
-          position: FeedbackPosition.Bottom, // iOS only
+          position: FeedbackPosition.Bottom,
           type: FeedbackType.Custom, // this is the default type, by the way
           message: "Custom colors and icon. Loaded from the App_Resources folder.",
           messageColor: new Color("#333333"),

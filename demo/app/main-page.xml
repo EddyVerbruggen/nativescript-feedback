@@ -9,7 +9,7 @@
         <Button text="Info, 2s" tap="{{ showInfo }}" class="button button-info" />
         <Button text="Warning, 4s" tap="{{ showWarning }}" class="button button-warning" />
         <Button text="Error, 1s" tap="{{ showError }}" class="button button-error" />
-        <Button text="Error, 5s, Bottom (iOS)" tap="{{ showErrorBottom }}" class="button button-error" />
+        <Button text="Error, 5s, Bottom" tap="{{ showErrorBottom }}" class="button button-error" />
         <Button text="No icon" tap="{{ showNoIcon }}" class="button button-custom" />
         <Button text="Custom icon" tap="{{ showCustomIcon }}" class="button button-custom-alt" />
         <Button text="Custom font" tap="{{ showCustomFont }}" class="button button-font" />
