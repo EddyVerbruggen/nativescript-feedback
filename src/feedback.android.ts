@@ -3,7 +3,7 @@ import * as application from "tns-core-modules/application";
 import * as utils from "tns-core-modules/utils/utils";
 import { Color } from "tns-core-modules/color";
 
-declare let com, android, Gravity: any;
+declare let com, android: any;
 
 export { FeedbackType };
 export { FeedbackPosition };
@@ -112,8 +112,7 @@ export class Feedback extends FeedbackCommon {
       this.lastAlert.getText().setTextSize(messageSize);
 
       if (options.android && options.android.iconColor) {
-        let iconView = this.lastAlert.getIcon(); // android.widget.ImageView
-        iconView.setColorFilter(options.android.iconColor.android);
+        alerter.setIconColorFilter(options.android.iconColor.android);
       }
 
       resolve();
