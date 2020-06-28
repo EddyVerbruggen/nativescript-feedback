@@ -112,8 +112,7 @@ export class Feedback extends FeedbackCommon {
       this.lastAlert.getText().setTextSize(messageSize);
 
       if (options.android && options.android.iconColor) {
-        let iconView = this.lastAlert.getIcon(); // android.widget.ImageView
-        iconView.setColorFilter(options.android.iconColor.android);
+        alerter.setIconColorFilter(options.android.iconColor.android);
       }
 
       resolve();
