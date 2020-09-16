@@ -68,6 +68,15 @@ export interface FeedbackShowOptions {
    */
   backgroundColor?: Color;
   /**
+   * Use gradient as background color. When this is used it overrides any 'backgroundColor' that is set.
+   * Default depends on the 'type' property.
+   */
+  gradientColors?: Array<Color>;
+  /**
+   * The direction the gradient colors should span.
+   */
+  gradientDirection?: 'left' | 'right' | 'up' | 'down';
+  /**
    * A resource like 'customimage' which refers to:
    * - iOS: App_Resources/customimage.png (and customimage@2x.png / customimage@3x.png)
    * - Android: App_Resources/drawable-hdpi/customimage.png (and other folders)
