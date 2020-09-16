@@ -121,6 +121,12 @@ export interface FeedbackShowOptions {
      * Default true.
      */
     iconPulseEnabled?: boolean;
+
+    /**
+     * The view to add the alert to.
+     * Useful when something is overlaying your Activity Modal, like a NativeScript Modal.
+     */
+    addToView?: any;
   };
 }
 

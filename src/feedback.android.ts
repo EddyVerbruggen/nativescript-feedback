@@ -86,6 +86,11 @@ export class Feedback extends FeedbackCommon {
       }
 
       this.lastAlert = alerter.show();
+      if (options.android && options.android.addToView) {
+        const parent = this.lastAlert.getParent();
+        parent.removeView(this.lastAlert);
+        options.android.addToView.addView(this.lastAlert);
+      }
 
       if (options.backgroundColor) {
         this.lastAlert.setAlertBackgroundColor(options.backgroundColor.android);
