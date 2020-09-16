@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
+        "target": "es2017",
+        "module": "esnext",
         "declaration": false,
-        "removeComments": true,
+        "removeComments": false,
         "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -23,7 +23,8 @@
         "types": [],
         "lib": [
             "es6",
-            "dom"
+            "dom",
+            "es2017"
         ],
         "baseUrl": ".",
         "paths": {
@@ -34,7 +35,8 @@
                 "./node_modules/tns-core-modules/*",
                 "./node_modules/*"
             ]
-        }
+        },
+        "moduleResolution": "node"
     },
     "exclude": [
         "node_modules",

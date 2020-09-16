@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
   <ScrollView>
     <StackLayout>
       <Label text="NativeScript Feedback" class="message" textWrap="true"/>

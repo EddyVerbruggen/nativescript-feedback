@@ -1,10 +1,9 @@
 // NativeScript core theme
 // @see https://docs.nativescript.org/ui/theme
-@import '~nativescript-theme-core/scss/dark';
+@import '~@nativescript/theme/core';
+@import '~@nativescript/theme/orange';
 
 // Override variables here
-
-@import '~nativescript-theme-core/scss/index';
 
 // Global SCSS styling
 // @see https://docs.nativescript.org/ui/styling

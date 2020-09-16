@@ -13,7 +13,7 @@
 
 <script>
   import {Feedback, FeedbackType, FeedbackPosition} from "nativescript-feedback";
-  import {Color} from "tns-core-modules/color";
+  import {Color} from "@nativescript/core";
 
   const feedback = new Feedback();
 

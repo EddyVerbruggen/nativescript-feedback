@@ -1,9 +1,7 @@
 import { FeedbackCommon, FeedbackShowOptions, FeedbackHideOptions, FeedbackType, FeedbackPosition } from "./feedback.common";
-import * as application from "tns-core-modules/application";
-import * as utils from "tns-core-modules/utils/utils";
-import { Color } from "tns-core-modules/color";
+import { Application, Color, Utils } from "@nativescript/core";
 
-declare let com, android: any;
+declare const com: any;
 
 export { FeedbackType };
 export { FeedbackPosition };
@@ -13,9 +11,9 @@ export class Feedback extends FeedbackCommon {
   private lastAlert: any = null;
 
   show(options: FeedbackShowOptions): Promise<void> {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       this.lastAlert = null;
-      let alerter = com.tapadoo.alerter.Alerter.create(application.android.foregroundActivity)
+      let alerter = com.tapadoo.alerter.Alerter.create(Application.android.foregroundActivity)
           .setLayoutGravity(Feedback.getPosition(options.position))
           .setIconColorFilter(0)
           .setDuration(options.duration ? options.duration : 4000);
@@ -47,14 +45,14 @@ export class Feedback extends FeedbackCommon {
       }
 
       if (options.titleFont) {
-        const assetManger = utils.ad.getApplicationContext().getAssets();
+        const assetManger = Utils.ad.getApplicationContext().getAssets();
         const fontPath = `app/fonts/${options.titleFont}`;
         const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
         alerter.setTitleTypeface(typeface);
       }
 
       if (options.messageFont) {
-        const assetManger = utils.ad.getApplicationContext().getAssets();
+        const assetManger = Utils.ad.getApplicationContext().getAssets();
         const fontPath = `app/fonts/${options.messageFont}`;
         const typeface = android.graphics.Typeface.createFromAsset(assetManger, fontPath);
         alerter.setTextTypeface(typeface);
@@ -134,8 +132,8 @@ export class Feedback extends FeedbackCommon {
   }
 
   private static getIconResourceId(resourcename: string): number {
-    let res = utils.ad.getApplicationContext().getResources();
-    return res.getIdentifier(resourcename, "drawable", utils.ad.getApplication().getPackageName());
+    let res = Utils.ad.getApplicationContext().getResources();
+    return res.getIdentifier(resourcename, "drawable", Utils.ad.getApplication().getPackageName());
   }
 
   private static getIconName(type?: FeedbackType): string {
@@ -161,7 +159,7 @@ export class Feedback extends FeedbackCommon {
   }
 
   hide(options?: FeedbackHideOptions): Promise<void> {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       if (com.tapadoo.alerter.Alerter.isShowing()) {
         com.tapadoo.alerter.Alerter.hide();
         this.lastAlert = null;

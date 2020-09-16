@@ -1,7 +1,5 @@
 import { Feedback, FeedbackPosition, FeedbackType } from "nativescript-feedback";
-import { Color } from "tns-core-modules/color";
-import { Observable } from "tns-core-modules/data/observable";
-import { isIOS } from "tns-core-modules/platform";
+import { Color, isIOS, Observable } from "@nativescript/core";
 
 export class HelloWorldModel extends Observable {
   private feedback: Feedback;

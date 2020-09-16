@@ -1,20 +1,15 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.plugindemo.feedback",
-    "tns-android": {
-      "version": "6.5.0"
-    },
-    "tns-ios": {
-      "version": "6.5.0"
-    }
-  },
   "dependencies": {
     "nativescript-feedback": "file:../src",
-    "nativescript-theme-core": "~1.0.6",
-    "nativescript-unit-test-runner": "0.7.0",
-    "tns-core-modules": "~6.0.6"
+    "@nativescript/theme": "~2.3.0",
+    "@nativescript/core": "7.0.0",
+    "nativescript-unit-test-runner": "0.7.0"
   },
   "devDependencies": {
+    "@nativescript/android": "7.0.0",
+    "@nativescript/ios": "7.0.0",
+    "@nativescript/types": "7.0.0",
+    "@nativescript/webpack": "3.0.0",
     "babel-traverse": "6.26.0",
     "babel-types": "6.26.0",
     "babylon": "6.18.0",
@@ -22,15 +17,13 @@
     "karma": "4.1.0",
     "karma-jasmine": "2.0.1",
     "karma-nativescript-launcher": "^0.4.0",
+    "karma-webpack": "3.0.5",
     "lazy": "1.0.11",
-    "nativescript-css-loader": "~0.26.1",
-    "nativescript-dev-webpack": "~1.5.0",
-    "tns-platform-declarations": "~6.0.6",
     "tslint": "~5.4.3",
-    "typescript": "3.4.5",
-    "karma-webpack": "3.0.5"
+    "typescript": "3.9.7"
   },
   "scripts": {
     "build.plugin": "cd ../src && npm run build"
-  }
+  },
+  "main": "app.js"
 }
