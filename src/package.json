@@ -1,13 +1,13 @@
 {
   "name": "nativescript-feedback",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Non-blocking textual feedback for your NativeScript app. AKA superfancy Toasts!",
   "main": "feedback",
   "typings": "index.d.ts",
   "nativescript": {
     "platforms": {
-      "android": "7.0.0",
-      "ios": "7.0.0"
+      "android": "8.0.0",
+      "ios": "8.0.0"
     }
   },
   "scripts": {
